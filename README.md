@@ -1,22 +1,11 @@
-# **Gettin Started**
+# **How it works?**
+```diff
++ This Repo Increases Reach with minor changes.
 
-Hi!
-So I created this project because I was tired of logging in via Cowin using an OTP to check for availability of vaccines in my area.
-
-Please feel free to clone this code and use for your own friends and family
-
-Stay safe!!
-
-## **Requirements**
-* One python developer who works in Python 3.x. If you can't find one, feel free to contact me.
-* A working internet connection
-
-## **How it works?**
+```
 
 So the program gets the vaccines available in an entire district using a district key- which depends on the state. 
 
-
-You can get the your district key by running **getDistrictIDs.py**, and **replace** the value of StateID with your state ID from the table given below.
 
 | State name                  | State id |
 | --------------------------- | -------- |
@@ -60,12 +49,13 @@ You can get the your district key by running **getDistrictIDs.py**, and **replac
 
 
 For example, if my district lies in Delhi, I will run getDistrictIDs.py with the StateID value as 9
+```
+$ python getDistricts.py 9
+
+```
 Upon running, you will recieve a table of the format below
 
 ```
-$ python getDistrictIDs.py
-
-
 Central Delhi                    141
 East Delhi                       145
 New Delhi                        140
@@ -78,6 +68,19 @@ South East Delhi                 144
 South West Delhi                 150
 West Delhi                       142
 ```
+Once you get the code, say 141 for central Delhi:
+```
+$ chmod +x run.sh
+$ ./run.sh <refresh_time> <District ID - Refer getDistrict.py> <Age Constraint> <Age>
+
+```
+If you want to search based on Age (Assuming your age is 21):
+```diff
+! For the program to run every 5 seconds for Central Delhi (Code: 141), Age constraint given age: 21
+$ ./run.sh 5 141 1 21
+
+```
+
 
 Now take the ID to your respective district, and edit line 13 in Main.py to get vaccines for your district.
 Run Main.py to get vaccine details in your district till the next five weeks.
@@ -101,6 +104,6 @@ Now you might say that your filter isn't the one above, you can change the value
 |select_age_flag|Flag to displays center list based on all ages or specific age group, select 0 for all vaccine slots, 1 for selected age vaccine slots. Default is 1|
 |paid_necessary| Enter one if only want to see paid centers, else enter 0, default is 0|
 
-
-
-PS- Sometimes it might say "Error accessing data from Cowin. This happens due to the cloudflare protection used by the government for their servers. Just run the file again, it should work. If it doesn't, wait for some time before running again, otherwise feel free to [contact me](https://www.instagram.com/hey_atleast_someone/)
+```diff
+! Original work of: https://github.com/policeb00th/Cowin
+```

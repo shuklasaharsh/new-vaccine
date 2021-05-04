@@ -1,10 +1,11 @@
 import requests
+import sys
 import json
 
 '''
 Edit State ID
 '''
-StateID=9
+StateID=int(sys.argv[1])
 
 
 
